@@ -1,0 +1,12 @@
+dependencies:
+- name: samplehelmapp
+  repository: https://aravindjordank8s.github.io/helmcharts/
+  version: 3.0.0
+- name: samplehelmapp
+  repository: https://aravindjordank8s.github.io/helmcharts/
+  version: 2.0.0
+- name: samplehelmapp
+  repository: https://aravindjordank8s.github.io/helmcharts/
+  version: 1.0.0
+digest: sha256:0c253ee30c2ebcddada3c11d4f0604506dd6c580131c90c1de9eb03ae0487cc1
+generated: "2024-03-29T17:44:01.3530805+05:30"

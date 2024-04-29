@@ -1,0 +1,16 @@
+apiVersion: v2
+name: parentchart
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+dependencies:
+- name: samplehelmapp
+  version: "1.0.0"
+  repository: "https://aravindjordank8s.github.io/helmcharts/"
+- name: mysql
+  #version: "9.11.2" #Exact Version
+  version: ">= 9.11.2" #Greater Version
+  #version: "<= 9.11.2" #"Lesser Version"
+  #version: ">= 9.11.2 < 9.21.2" #In the given range
+  repository: "https://charts.bitnami.com/bitnami"
