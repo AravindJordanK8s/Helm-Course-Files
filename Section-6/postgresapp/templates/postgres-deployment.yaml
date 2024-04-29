@@ -1,0 +1,25 @@
+{{- $releaseName := .Values.postgresapp.releaseName -}}
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: {{ $releaseName }}-deployment
+  labels:
+    {{- include "postgresapp.Labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "postgresapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.postgresapp.podName }}
+      labels:
+        {{- include "postgresapp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.postgresapp.containerName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+          {{- include "postgresapp.envSecrets" . | indent 12 }}

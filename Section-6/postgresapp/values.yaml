@@ -1,0 +1,31 @@
+postgresapp:
+  deploy: middle-deployment
+  name: postgres-service
+  tier: middle
+  podName: rpostgresapp-pod
+  containerName: postgresapp-container
+  releaseName: postgres
+  serviceName: db
+
+replicaCount: 1
+
+image:
+  repository: postgres 
+  tag: latest
+
+service:
+  port: 5432
+  targetPort: 5432
+  type: ClusterIP
+
+ingress:
+  enabled: false
+
+secret:
+  type: Opaque
+
+env:
+  secret:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_HOST_AUTH_METHOD: trust

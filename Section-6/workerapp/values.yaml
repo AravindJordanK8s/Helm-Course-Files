@@ -1,0 +1,18 @@
+# Default values for workerapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+workerapp:
+  deploy: backend-deployment
+  name: workerapp
+  tier: middle
+  podName: workerapp-pod
+  containerName: workerapp-container
+
+replicaCount: 1
+
+image:
+  repository: kodekloud/examplevotingapp_worker
+  tag: v1
+
+ingress:
+  enabled: false

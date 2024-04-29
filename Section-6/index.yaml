@@ -1,0 +1,58 @@
+apiVersion: v1
+entries:
+  postgresapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-08T15:42:47.7987653+05:30"
+    description: A Helm chart for Kubernetes
+    digest: baebcff56783dd6385b3378a4dbde7f4830b9ad3d583ecc7d96dceba4a2d36f2
+    name: postgresapp
+    type: application
+    urls:
+    - https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/postgresapp-1.0.0.tgz
+    version: 1.0.0
+  redisapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-08T15:42:47.7987653+05:30"
+    description: A Helm chart for Kubernetes
+    digest: a6e339efcfb2f07378afe780c82942d5434f57203823aa7c4eec13765cacbcb4
+    name: redisapp
+    type: application
+    urls:
+    - https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/redisapp-1.0.0.tgz
+    version: 1.0.0
+  resultapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-08T15:42:47.7993152+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 9e7dc1b6b9fed2ef89822a4036341e3fa8e4d0a409376c460ce6bfc612edca00
+    name: resultapp
+    type: application
+    urls:
+    - https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/resultapp-1.0.0.tgz
+    version: 1.0.0
+  voteapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-08T15:42:47.8025767+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 87d889716005f2285494b9f12767afea42bcda01e8895a3c2da7ec6f296c65b2
+    name: voteapp
+    type: application
+    urls:
+    - https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/voteapp-1.0.0.tgz
+    version: 1.0.0
+  workerapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-04-08T15:42:47.8025767+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 3ddb96a5513de78bad7aaaf7a3bef6ffc85098568d6e7d18a685449076a02b8f
+    name: workerapp
+    type: application
+    urls:
+    - https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/workerapp-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-04-08T15:42:47.7982155+05:30"

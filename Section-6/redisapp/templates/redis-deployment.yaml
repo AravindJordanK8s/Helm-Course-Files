@@ -1,0 +1,23 @@
+{{- $releaseName := .Values.redisapp.releaseName -}}
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: {{ $releaseName }}-deployment
+  labels:
+    {{- include "redisapp.Labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "redisapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.redisapp.podName }}
+      labels:
+        {{- include "redisapp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.redisapp.containerName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}

@@ -1,0 +1,23 @@
+{{- $releaseName := .Values.resultapp.name -}}
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: {{ $releaseName }}-deployment
+  labels:
+    {{- include "resultapp.Labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "resultapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.resultapp.podName }}
+      labels:
+        {{- include "resultapp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.resultapp.containerName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}

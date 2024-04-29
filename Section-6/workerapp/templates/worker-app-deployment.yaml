@@ -1,0 +1,21 @@
+{{- $releaseName := .Values.workerapp.name -}}
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: {{ $releaseName }}-deployment
+  labels:
+    {{- include "workerapp.Labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "workerapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.workerapp.podName }}
+      labels:
+        {{- include "workerapp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.workerapp.containerName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}

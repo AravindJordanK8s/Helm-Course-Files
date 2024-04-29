@@ -1,0 +1,21 @@
+resultapp:
+  deploy: front-end-application 
+  name: resultapp
+  tier: front-end
+  podName: resultapp-pod
+  containerName: resultapp-container
+
+replicaCount: 1
+
+image:
+  repository: kodekloud/examplevotingapp_result
+  tag: v1
+
+service:
+  type: LoadBalancer
+  nodePort: 31232
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false

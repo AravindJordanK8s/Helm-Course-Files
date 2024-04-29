@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: {{ include "voteapp.releasename" . }}-deployment
+  labels:
+    {{- include "voteapp.Labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "voteapp.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: {{ .Values.voteapp.podName }}
+      labels:
+        {{- include "voteapp.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.voteapp.containerName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}

@@ -1,0 +1,14 @@
+{{- $serviceName := .Values.postgresapp.serviceName -}}
+apiVersion: v1
+kind: Service 
+metadata:
+  name: {{ $serviceName }}
+  labels:
+    {{- include "postgresapp.Labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+  selector:
+    {{- include "postgresapp.selectorLabels" . | nindent 4 }}

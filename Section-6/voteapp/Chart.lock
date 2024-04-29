@@ -1,0 +1,15 @@
+dependencies:
+- name: postgresapp
+  repository: https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/
+  version: 1.0.0
+- name: redisapp
+  repository: https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/
+  version: 1.0.0
+- name: workerapp
+  repository: https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/
+  version: 1.0.0
+- name: resultapp
+  repository: https://aravindjordank8s.github.io/VotingAppCloudHelmCharts/
+  version: 1.0.0
+digest: sha256:1bf8ba8d628764099f1138382669eb0a6379410fb9a66c7f710cd8d6ff582ba3
+generated: "2024-04-08T15:41:57.7532483+05:30"

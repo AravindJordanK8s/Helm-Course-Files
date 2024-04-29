@@ -1,0 +1,24 @@
+# Default values for voteapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+voteapp:
+  deploy: front-end-application
+  name: votingapp
+  tier: front-end
+  podName: votingapp-pod
+  containerName: votingapp-container
+
+replicaCount: 1
+
+image:
+  repository: kodekloud/examplevotingapp_vote
+  tag: v1
+
+service:
+  type: LoadBalancer
+  nodePort: 31231
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false
