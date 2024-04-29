@@ -1,0 +1,43 @@
+{{- $chartname1 := .Chart.Name -}}
+{{- $chartname2 := .Chart.Name | quote | upper -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-deployment
+  labels:
+    helm.sh/chart: {{ $chartname2 }}
+    app.kubernetes.io/name: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}-{{ .Chart.Name }}
+    app.kubernetes.io/version: {{ .Chart.Version }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+{{- with .Values.application }}
+{{- if eq .env "prod" }}
+  replicas: 5
+{{- else }}  
+  replicas: 3
+{{- end }}   
+{{- end }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Chart.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}-{{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: {{ $chartname2 }}
+        app.kubernetes.io/name: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}-{{ .Chart.Name }}
+        app.kubernetes.io/version: {{ .Chart.Version }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "praravind1801/helmimages:1.0.0"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources: 
+          {{- toYaml .Values.resources | nindent 12 }}

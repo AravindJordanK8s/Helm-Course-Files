@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+data:
+{{- with .Values.Appconfig }}
+  application-name: {{ .appName }}   
+  application-type: {{ .appType }}
+  application-release: {{ .appRelease }}
+  application-language: {{ .appLanguage }}
+  helm-release: {{ .Release.Name }}
+{{- end -}}

@@ -1,0 +1,22 @@
+#With only one iterator
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+# data:
+#   applicationinfo: |-
+#   {{- range $key, $value := .Values.configRangeList }}
+#     {{ $key }}: {{ $value | quote }}
+#   {{- end}}
+
+#With two iterator and using variable
+{{ $chartName := .Chart.Name }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+data:
+  applicationinfo: |-
+  {{- range $key, $value := .Values.configRangeList }}
+    {{ $key }}: {{ $value }}-{{ $chartName }}
+  {{- end -}}

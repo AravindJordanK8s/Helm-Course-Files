@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+data:
+ applicationInfo: |
+   {{- range .Values.configRangeList }}
+   - {{ . }}
+   {{- end -}}
+
+#With Variable
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+# data:
+#  applicationInfo: |
+# {{- range $config := .Values.configRangeList }}
+#   - {{ $config.key }}
+# {{- end -}}

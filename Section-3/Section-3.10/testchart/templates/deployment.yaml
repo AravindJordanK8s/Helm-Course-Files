@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "testchart.ResourceName" . }}-deployment
+  labels:
+    {{- include "testchart.commonlabels" . }}
+    helm.sh/chart: {{ .Chart.Name }}
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      {{- include "testchart.selectorlabels" . | indent 2 }}
+  template:
+    metadata:
+      labels:
+        {{- include "testchart.commonlabels" . | indent 4 }}
+        helm.sh/chart: {{ .Chart.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "praravind1801/helmimages:1.0.0"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources: 
+          {{- toYaml .Values.resources | nindent 12 }}

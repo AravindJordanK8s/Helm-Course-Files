@@ -1,0 +1,18 @@
+# Default values for testchart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#Without Variable Range
+configRangeList:
+  - sampleapp
+  - frontend
+  - v1
+  - HTML
+
+#With Variable Range
+# configRangeList:
+#   - key: sampleapp
+#   - key: frontend
+#   - key: v1
+#   - key: HTML
+
