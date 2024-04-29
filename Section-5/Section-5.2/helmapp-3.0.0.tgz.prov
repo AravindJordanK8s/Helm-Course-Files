@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 3.0.0
+description: A Helm chart for Kubernetes
+name: helmapp
+type: application
+version: 3.0.0
+
+...
+files:
+  helmapp-3.0.0.tgz: sha256:53952b90f7c36b5b56a3b624a6de1d7acdb5489c16d4d339df3e746a7ad77c30
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJmC9JpCRBjkwqtuZJ7VwAAa+cMALMsYtHPf5IFmTILOBDM3G13
+uC9QUR+KslUaiSRp5MVRAF6smgPs1cAILTV8srj6IPbaKUIU5KDsjZJ5422lP6o/
+j9N0mXHVExHE4kc1i3SI3dAVDxLLaYlUx989462f1oU6oiW+a2wv/GEBvz6SCgIT
+LuZVE6PMTkAIihYma6KbUXcW1nWXOJQC7RFGRItrWDHrkVYaLPOWqs3Ao8Q0F1U9
+KglxjhSPJC5WaOpzLSOQIxhnyvmiC6B98tul+ZKwvcJ9gvButs4ZOcNSs/gUe7On
+FgOU2zSZXLO8ngjO+x28lw7LDaGua162WBnLper3A3jMMOnqz52EmFj7PpEWpbzF
+8xIY9PKFlcRu9khv7Z5HqZIdGX4iViN7RFhcOJTCcnGInsgvt1UOmChAgtRJnrwW
+Hr+ZUFqK3kDf9vudfHdwL4SCQUY6c9Imt8joFnkex/X4BBL+CnQeGwg+/O1ndg9C
+pyIlFa71mwNV7H1jrEYXSCmj4J6R0SllcHY5CaC5nA==
+=FMvp
+-----END PGP SIGNATURE-----

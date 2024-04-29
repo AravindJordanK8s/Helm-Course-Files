@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.0.0
+description: A Helm chart for Kubernetes
+name: sampleapp
+type: application
+version: 1.0.0
+
+...
+files:
+  sampleapp-1.0.0.tgz: sha256:8890ba5c60fbd0cbdf00ef4ded51c4077944bee2124b09618a9faade19b832ec
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJmC+UKCRBjkwqtuZJ7VwAAfRIMAAg1ESJrT/8zWyk+c95pdAwy
+z5VCSx40qCrt3ywJYKdh0EBM7MloYQYJFa3QHsNzgbz630rsP1CfqqywJAwPsLhv
+kReEZWGjW+Fzu7BsY54ruSgdoU0uUOx7xwdfglR3zy4wI7CKV3euvV5SfD5Y9+XU
+NT0FdVJaWg6FRMv//XhUDUzEA1msEhfKP6uQEvANh/wpR6ER/2q9zyqdl08yn0O6
+bZopztGlJjSYCXUemHTVSVZuX3cibKFCcPjf9g+bC2EyCpKr/tTOuLPzzCl9vmnW
+bTtNMev6pv4kx5wjCZcHT/Le/Pddxkq8bgCmwdvgoZ48q+uo4RmDLellRiLlryhl
+TXw9dk3g+HJnYaGj8OvloH8LnxIubrlv5wAHj7YNBD82QscyKPd8YDKTrxaYgLdr
+bnkZiwmN00JYoAN8HQruw+jzQ4YZED6O4qFcVeC0CSxRaR+LKvo+VF9x2c/GleaI
+W0nfbH/M8UFEKjUOud4SeUMFQTmqRNHXkuNc1HUgvQ==
+=9Z8W
+-----END PGP SIGNATURE-----
